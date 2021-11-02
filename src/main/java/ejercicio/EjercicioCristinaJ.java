@@ -135,6 +135,17 @@ public class EjercicioCristinaJ {
                         System.out.println("Elija una opción correcta");
                         break;
                 }
+                //para que los usuarios intruzcan sus números, no puede ser menor a 0 y mayor a 10
+                do {
+                    
+                    System.out.println("Jugador j1 elija su número");
+                    numeroJugador1 = teclado.nextInt();
+
+                } while (numeroJugador1 < 0 || numeroJugador1 > 10);
+                
+                numeroJugador2Aleatorio = numeroRandom.nextInt(10)+1;
+                System.out.println("Jugador j2 ha elegido " + numeroJugador2Aleatorio);
+                
                 break;
             case 3:
                 System.out.println("Hasta la próxima");
