@@ -146,6 +146,44 @@ public class EjercicioCristinaJ {
                 numeroJugador2Aleatorio = numeroRandom.nextInt(10)+1;
                 System.out.println("Jugador j2 ha elegido " + numeroJugador2Aleatorio);
                 
+                //Sumamos los números introducidos por scanner para sacar el resultado
+                int sumaMaquina = numeroJugador1+numeroJugador2Aleatorio;
+                System.out.println("El resultado es " + sumaMaquina);
+                
+                //Si es par gana pares, si no, gana nones(impares)
+                if (sumaMaquina % 2 == 0) {
+                    
+                    System.out.println("Ha ganado pares");
+                    
+                    //Si el usuario ha elegido pares ganará
+                    if (esPares == true) {
+                       
+                        System.out.println("Ha ganado el jugador J1, FELICIDADES");
+                        
+                    //Si no, pierde
+                    } else {
+                        
+                        System.out.println("Ha ganado el jugador j2, FELICIDADES");
+                        
+                    }
+                    
+                } else {
+                    
+                    //En caso de que sea impar gana nones
+                    System.out.println("Ha ganado nones");
+                    
+                    //Si el usuario ha elegido ser nones ganará j1
+                    if (esPares == false) {
+                        
+                        System.out.println("Ha ganado el jugador J1, FELICIDADES");
+                        
+                    //Si no, gana j2
+                    } else {
+                        
+                        System.out.println("Ha ganado el jugador j2, FELICIDADES");
+                        
+                    }
+                }
                 break;
             case 3:
                 System.out.println("Hasta la próxima");
