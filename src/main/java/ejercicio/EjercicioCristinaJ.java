@@ -13,10 +13,8 @@ import java.util.Scanner;
  */
 public class EjercicioCristinaJ {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {    
+    public static void main(String[] args) {   
+        
         //Objetos random y scanner
         Random numeroRandom = new Random();
         Scanner teclado = new Scanner(System.in);
@@ -106,6 +104,7 @@ public class EjercicioCristinaJ {
                 break;
             case 2:
                 System.out.println("Ha elegido jugar contra la máquina");
+                
                 //Para que los jugadores decidan si quieren ser pares o nones
                 do {
                     System.out.println("Jugador j1 le damos la oportunidad de elegir "
@@ -185,9 +184,11 @@ public class EjercicioCristinaJ {
                     }
                 }
                 break;
+                
             case 3:
                 System.out.println("Hasta la próxima");
                 break;
+                
             default:
                 System.out.println("Elija una opción entre 1 y 3");
 
