@@ -76,6 +76,33 @@ public class EjercicioCristinaJ {
 
                 } while (numeroJugador2 < 0 || numeroJugador2 > 10);
                 
+                
+                //Sumamos los números introducidos por scanner para sacar el resultado
+                int suma = numeroJugador1+numeroJugador2;
+                System.out.println("El resultado de la suma de ambos números es " + suma);
+                
+                //Si es par gana pares, si no, gana nones(impares)
+                if (suma % 2 == 0) {
+                    System.out.println("Ha ganado pares");
+                    if (esPares == true) {
+                        //Si sale par gana j1
+                        System.out.println("Ha ganado el jugador J1, FELICIDADES");
+                    } else {
+                        //Si no, j2
+                        System.out.println("Ha ganado el jugador j2, FELICIDADES");
+                    }
+                } else {
+                    System.out.println("Ha ganado nones");
+                    if (esPares == false) {
+                        //Si sale impar gana j2
+                        System.out.println("Ha ganado el jugador J1, FELICIDADES");
+                    } else {
+                        //Si no, j1
+                        System.out.println("Ha ganado el jugador j2, FELICIDADES");
+                    }
+                
+                } 
+                
                 break;
             case 2:
                 System.out.println("Ha elegido jugar contra la máquina");
