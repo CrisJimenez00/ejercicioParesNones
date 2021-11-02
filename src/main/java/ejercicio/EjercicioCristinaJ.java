@@ -46,6 +46,20 @@ public class EjercicioCristinaJ {
                     eleccion = teclado.nextInt();
                 } while (eleccion < 1 || eleccion > 2);
                 
+                //Para que el usuario vea cómo va
+                switch (eleccion) {
+                    case 1:
+                        System.out.println("Ha elejido ser pares");
+                        esPares = true;
+                        break;
+                    case 2:
+                        System.out.println("Ha elegido ser nones");
+                        esPares = false;
+                        break;
+                    default:
+                        System.out.println("Elija una opción correcta");
+                        break;
+                }
                 
                 break;
             case 2:
