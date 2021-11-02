@@ -37,6 +37,7 @@ public class EjercicioCristinaJ {
         switch(opcion){
             case 1:
                 System.out.println("Ha elegido jugar contra persona en físico");
+                
                 //Para que los jugadores decidan si quieren ser pares o nones
                 do {
                     System.out.println("Jugador j1 le damos la oportunidad de elegir "
@@ -60,6 +61,20 @@ public class EjercicioCristinaJ {
                         System.out.println("Elija una opción correcta");
                         break;
                 }
+                
+                //para que los usuarios intruzcan sus números, no puede ser menor a 0 y mayor a 10
+                do {
+                    System.out.println("Jugador j1 elija su número");
+                    numeroJugador1 = teclado.nextInt();
+
+                } while (numeroJugador1 < 0 || numeroJugador1 > 10);
+                
+                
+                do {
+                    System.out.println("Jugador j2 elija su número");
+                    numeroJugador2 = teclado.nextInt();
+
+                } while (numeroJugador2 < 0 || numeroJugador2 > 10);
                 
                 break;
             case 2:
