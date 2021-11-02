@@ -16,10 +16,16 @@ public class EjercicioCristinaJ {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {      
+    public static void main(String[] args) {    
+        //Objetos random y scanner
         Random numeroRandom = new Random();
         Scanner teclado = new Scanner(System.in);
-        int opcion;
+        
+        //Variables 
+        int opcion, numeroJugador1, numeroJugador2, numeroJugador2Aleatorio ,eleccion;
+        boolean esPares = false;
+        
+        //Para que el programa no acabe hasta que el usuario decide acabar
         do {
             System.out.println("Bienvenido al juego de pares y nones"
                     + "\n1.Jugar con otro jugador en físico"
@@ -27,10 +33,20 @@ public class EjercicioCristinaJ {
                     + "\n3.Salir"
                     + "\nElija una opción correcta");
             opcion = teclado.nextInt();
-        } while (opcion != 3);
+        
         switch(opcion){
             case 1:
                 System.out.println("Ha elegido jugar contra persona en físico");
+                //Para que los jugadores decidan si quieren ser pares o nones
+                do {
+                    System.out.println("Jugador j1 le damos la oportunidad de elegir "
+                            + "si quiere ser pares o nones"
+                            + "\n1.Para pares"
+                            + "\n2.Para nones");
+                    eleccion = teclado.nextInt();
+                } while (eleccion < 1 || eleccion > 2);
+                
+                
                 break;
             case 2:
                 System.out.println("Ha elegido jugar contra la máquina");
@@ -42,6 +58,7 @@ public class EjercicioCristinaJ {
                 System.out.println("Elija una opción correcta");
 
         }
+        } while (opcion != 3);
     }
     
 }
