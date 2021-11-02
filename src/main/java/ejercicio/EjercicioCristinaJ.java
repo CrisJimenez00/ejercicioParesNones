@@ -31,7 +31,7 @@ public class EjercicioCristinaJ {
                     + "\n1.Jugar con otro jugador en físico"
                     + "\n2.Jugar contra la máquina"
                     + "\n3.Salir"
-                    + "\nElija una opción correcta");
+                    + "\nElija una opción");
             opcion = teclado.nextInt();
         
         switch(opcion){
@@ -143,7 +143,7 @@ public class EjercicioCristinaJ {
 
                 } while (numeroJugador1 < 0 || numeroJugador1 > 10);
                 
-                numeroJugador2Aleatorio = numeroRandom.nextInt(10)+1;
+                numeroJugador2Aleatorio = numeroRandom.nextInt(11);
                 System.out.println("Jugador j2 ha elegido " + numeroJugador2Aleatorio);
                 
                 //Sumamos los números introducidos por scanner para sacar el resultado
@@ -189,7 +189,7 @@ public class EjercicioCristinaJ {
                 System.out.println("Hasta la próxima");
                 break;
             default:
-                System.out.println("Elija una opción correcta");
+                System.out.println("Elija una opción entre 1 y 3");
 
         }
         } while (opcion != 3);
