@@ -106,6 +106,35 @@ public class EjercicioCristinaJ {
                 break;
             case 2:
                 System.out.println("Ha elegido jugar contra la máquina");
+                //Para que los jugadores decidan si quieren ser pares o nones
+                do {
+                    System.out.println("Jugador j1 le damos la oportunidad de elegir "
+                            + "si quiere ser pares o nones"
+                            + "\n1.Para pares"
+                            + "\n2.Para nones");
+                    eleccion = teclado.nextInt();
+                } while (eleccion < 1 || eleccion > 2);
+                
+                //Para que el usuario elija si ser pares o nones
+                switch (eleccion) {
+                    case 1:
+                        System.out.println("Ha elejido ser pares");
+                        //El boleano es true significa que es ha elegido ser pares
+                        esPares = true;
+                        break;
+                        
+                    case 2:
+                        
+                        System.out.println("Ha elegido ser nones");
+                        //Si es false elige ser nones
+                        esPares = false;
+                        break;
+                        
+                    default:
+                        
+                        System.out.println("Elija una opción correcta");
+                        break;
+                }
                 break;
             case 3:
                 System.out.println("Hasta la próxima");
