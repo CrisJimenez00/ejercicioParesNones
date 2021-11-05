@@ -4,6 +4,7 @@
  */
 package ejercicio;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,8 +21,8 @@ public class EjercicioCristinaJ {
         Scanner teclado = new Scanner(System.in);
         
         //Variables 
-        int opcion, numeroJugador1, numeroJugador2, numeroJugador2Aleatorio ,eleccion;
-        boolean esPares = false;
+        int opcion = 3, numeroJugador1 = 0, numeroJugador2 = 0, numeroJugador2Aleatorio ,eleccion = 1;
+        boolean esPares = true;
         
         //Para que el programa no acabe hasta que el usuario decide acabar
         do {
@@ -30,7 +31,12 @@ public class EjercicioCristinaJ {
                     + "\n2.Jugar contra la máquina"
                     + "\n3.Salir"
                     + "\nElija una opción");
-            opcion = teclado.nextInt();
+            try{
+                opcion = teclado.nextInt();
+            }catch(InputMismatchException ime){
+                System.out.println("Introduzca un número por favor. "
+                        + "Debido a su error se cerrará el programa");
+            }
         
         switch(opcion){
             case 1:
@@ -42,7 +48,14 @@ public class EjercicioCristinaJ {
                             + "si quiere ser pares o nones"
                             + "\n1.Para pares"
                             + "\n2.Para nones");
-                    eleccion = teclado.nextInt();
+                    try {
+                        eleccion = teclado.nextInt();
+                    } catch (InputMismatchException ime) {
+                        System.out.println("Introduzca un número por favor. "
+                                + "Debido a su error se elegirá que sea pares");
+                        eleccion = 1;
+                        teclado.next();
+                    }
                 } while (eleccion < 1 || eleccion > 2);
                 
                 //Para que el usuario vea cómo va
@@ -63,14 +76,24 @@ public class EjercicioCristinaJ {
                 //para que los usuarios intruzcan sus números, no puede ser menor a 0 y mayor a 10
                 do {
                     System.out.println("Jugador j1 elija su número");
-                    numeroJugador1 = teclado.nextInt();
+                    try {
+                        numeroJugador1 = teclado.nextInt();
+                    } catch (InputMismatchException ime) {
+                        System.out.println("Introduzca un número por favor. "
+                                + "Debido a su error se le pondrá el número 0");
+                    }
 
                 } while (numeroJugador1 < 0 || numeroJugador1 > 10);
                 
                 
                 do {
                     System.out.println("Jugador j2 elija su número");
-                    numeroJugador2 = teclado.nextInt();
+                    try {
+                        numeroJugador2 = teclado.nextInt();
+                    } catch (InputMismatchException ime) {
+                        System.out.println("Introduzca un número por favor. "
+                                + "Debido a su error se le pondrá el número 0");
+                    }
 
                 } while (numeroJugador2 < 0 || numeroJugador2 > 10);
                 
@@ -82,7 +105,7 @@ public class EjercicioCristinaJ {
                 //Si es par gana pares, si no, gana nones(impares)
                 if (suma % 2 == 0) {
                     System.out.println("Ha ganado pares");
-                    if (esPares == true) {
+                    if (esPares) {
                         //Si sale par gana j1
                         System.out.println("Ha ganado el jugador J1, FELICIDADES");
                     } else {
@@ -91,7 +114,7 @@ public class EjercicioCristinaJ {
                     }
                 } else {
                     System.out.println("Ha ganado nones");
-                    if (esPares == false) {
+                    if (!esPares) {
                         //Si sale impar gana j2
                         System.out.println("Ha ganado el jugador J1, FELICIDADES");
                     } else {
@@ -111,7 +134,16 @@ public class EjercicioCristinaJ {
                             + "si quiere ser pares o nones"
                             + "\n1.Para pares"
                             + "\n2.Para nones");
-                    eleccion = teclado.nextInt();
+
+                    try {
+                        eleccion = teclado.nextInt();
+                    } catch (InputMismatchException ime) {
+                        System.out.println("Introduzca un número por favor. "
+                                + "Debido a su error se elegirá que sea pares");
+                        eleccion = 1;
+                        teclado.next();
+                    }
+                    
                 } while (eleccion < 1 || eleccion > 2);
                 
                 //Para que el usuario elija si ser pares o nones
@@ -138,7 +170,14 @@ public class EjercicioCristinaJ {
                 do {
                     
                     System.out.println("Jugador j1 elija su número");
-                    numeroJugador1 = teclado.nextInt();
+
+                    try {
+                        numeroJugador1 = teclado.nextInt();
+                    } catch (InputMismatchException ime) {
+                        System.out.println("Introduzca un número por favor. "
+                                + "Debido a su error se le asignará el número 0");
+                        teclado.next();
+                    }
 
                 } while (numeroJugador1 < 0 || numeroJugador1 > 10);
                 
@@ -155,7 +194,7 @@ public class EjercicioCristinaJ {
                     System.out.println("Ha ganado pares");
                     
                     //Si el usuario ha elegido pares ganará
-                    if (esPares == true) {
+                    if (esPares) {
                        
                         System.out.println("Ha ganado el jugador J1, FELICIDADES");
                         
@@ -172,7 +211,7 @@ public class EjercicioCristinaJ {
                     System.out.println("Ha ganado nones");
                     
                     //Si el usuario ha elegido ser nones ganará j1
-                    if (esPares == false) {
+                    if (!esPares) {
                         
                         System.out.println("Ha ganado el jugador J1, FELICIDADES");
                         
